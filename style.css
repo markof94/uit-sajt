@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Girassol&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Changa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quantico&display=swap');
 
 :root{
     --color-bg: #202527;
@@ -8,7 +10,7 @@
 body{
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: 'Girassol', cursive;
+    font-family: 'Quantico', sans-serif;
     background-image: url('assets/background.jpg');
 }
 
@@ -42,14 +44,21 @@ body{
 
     transition: all 0.3s ease-in-out;
 
-    border-radius: 4px;
+    border-radius: 8px;
 
-    border: 2px solid var(--color-text);
+    border: 2px solid transparent;
 
     overflow: hidden;
 
     user-select: none;
+
     
+}
+
+.home-box:hover{
+    border: 2px solid var(--color-text);
+
+    border-radius: 90px/30px;
 }
 
 .home-name{
@@ -97,13 +106,14 @@ body{
     font-size: 20px;
     margin: 4px;
     cursor: pointer;
-    border-radius: 16px 4px 16px 4px;
+    border-radius: 10px/30px;
 
 }
 
 .nav-button:hover{
     background-color: var(--color-text);
     color: var(--color-bg);
+    border-radius: 30px/10px;
 }
 
 .quote{
@@ -119,22 +129,20 @@ body{
 
 .biography-wrapper{
 
-    margin-top: 60px;
+    
 
     padding: 30px;
 
     background-color: rgba(32, 37, 39, 0.75);
     border-radius: 4px;
 
-    user-select: none;
+    border-radius: 90px/30px;
     
 }
 
 .title{
     font-size: 40px;
-
     margin-bottom: 40px;
-
 }
 
 .subtitle{
@@ -142,11 +150,15 @@ body{
 
 }
 
+.subtitle>a:link{
+    text-decoration: underline;
+}
 
 .biography-body{
     font-size: 20px;
     width: 80vmin;
     text-align: center;
+    
 }
 
 .games-wrapper{
@@ -156,9 +168,9 @@ body{
     flex-wrap: wrap;
 
     width: 90vmin;
-
-    
     background-color: rgba(32, 37, 39, 0.75);
+
+    border-radius: 90px/30px;
 
 }
 
@@ -176,6 +188,15 @@ body{
     font-size: 20px;
 
     border: 1px solid var(--color-text);
+
+    border-radius: 40px/15px;
+
+    transition: all 0.1s ease-in-out;
+}
+
+.game-box:hover{
+    background-color: var(--color-text);
+    color: var(--color-bg);
 }
 
 .game-preview{
@@ -184,21 +205,82 @@ body{
     border-bottom: 1px solid var(--color-text);
 }
 
-.game-name{
+a:link{
+    color:inherit;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+a:visited{
+    color:inherit;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.gallery-wrapper{
+    display: flex;
+    width: 90vmin;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(32, 37, 39, 0.75);
+    padding: 12px;
+
+    border-radius: 90px/30px;
+
+
+}
+
+.gallery-item{
+    margin-left: 6px;
+    margin-right: 6px;
+
+    cursor: pointer;
+}
+
+.gallery-image{
+    border-radius: 8px;
+
+    transition: all 0.15s ease-in-out;
+}
+
+.gallery-image:hover{
+   
+    border-radius: 90px/30px;
     
+}
+
+.gallery-entry-animation{
+    animation-name: gallery-entry;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.2s;
+}
+
+#image-center{
+    width: 50vmin;
+
+    border-radius: 90px/30px;
 
 }
 
-.games-wrapper>a:link{
-    color:inherit;
-    text-decoration: none;
-    color: var(--color-text);
+#image-left{
+    width: 15vmin;
+    opacity: 0.35;
 }
 
-.games-wrapper>a:visited{
-    color:inherit;
-    text-decoration: none;
-    color: var(--color-text);
+#image-right{
+    width: 15vmin;
+    opacity: 0.35;
+}
+
+#image-left:hover{
+    opacity: 1;
+}
+
+#image-right:hover{
+    opacity: 1;
 }
 
 @keyframes entry{
@@ -206,6 +288,17 @@ body{
         opacity: 0;
     }
     to{
+        opacity: 1;
+    }
+}
+
+@keyframes gallery-entry{
+    from{
+       
+        opacity: 0;
+    }
+    to{
+       
         opacity: 1;
     }
 }
