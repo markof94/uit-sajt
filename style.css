@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Girassol&display=swap');
+
+:root{
+    --color-bg: #202527;
+    --color-text: #FAA613;
+}
+
+body{
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: 'Girassol', cursive;
+    background-image: url('assets/background.jpg');
+}
+
+.home-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    
+    animation-name: entry;
+    animation-timing-function: ease-out;
+    animation-duration: 1.75s;
+   
+}
+
+.home-box{
+    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    width: 40vmin;
+   
+    background-color: var(--color-bg);
+    margin: 20px;
+    padding-top: 10px;
+    padding-bottom: 0;
+
+    transition: all 0.3s ease-in-out;
+
+    border-radius: 4px;
+
+    border: 2px solid var(--color-text);
+
+    overflow: hidden;
+
+    user-select: none;
+    
+}
+
+.home-name{
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.home-subname{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.home-photo{
+    width: 100%;
+    
+  
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    margin: 20px;
+
+    user-select: none;
+
+  
+
+}
+
+.nav-button{
+    border: 2px solid var(--color-text);
+    outline: none;
+    background-color: transparent;
+    color: var(--color-text);
+
+    padding: 8px 16px;
+
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+
+    font-family: inherit;
+    font-size: 20px;
+    margin: 4px;
+    cursor: pointer;
+    border-radius: 16px 4px 16px 4px;
+
+}
+
+.nav-button:hover{
+    background-color: var(--color-text);
+    color: var(--color-bg);
+}
+
+.quote{
+   
+    font-size: 16px;
+    margin-top: 32px;
+    padding: 10px;
+
+    user-select: none;
+
+
+}
+
+.biography-wrapper{
+
+    margin-top: 60px;
+
+    padding: 30px;
+
+    background-color: rgba(32, 37, 39, 0.75);
+    border-radius: 4px;
+
+    user-select: none;
+    
+}
+
+.title{
+    font-size: 40px;
+
+    margin-bottom: 40px;
+
+}
+
+.subtitle{
+    font-size: 16px;
+
+}
+
+
+.biography-body{
+    font-size: 20px;
+    width: 80vmin;
+    text-align: center;
+}
+
+.games-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 90vmin;
+
+    
+    background-color: rgba(32, 37, 39, 0.75);
+
+}
+
+.game-box{
+    display: flex;
+    flex-direction: column;
+    width: 20vmin;
+
+    background-color: var(--color-bg);
+    margin: 16px;
+   
+    padding-bottom: 8px;
+    
+    overflow: hidden;
+    font-size: 20px;
+
+    border: 1px solid var(--color-text);
+}
+
+.game-preview{
+    width: 100%;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--color-text);
+}
+
+.game-name{
+    
+
+}
+
+.games-wrapper>a:link{
+    color:inherit;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.games-wrapper>a:visited{
+    color:inherit;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+@keyframes entry{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
