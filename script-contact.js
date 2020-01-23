@@ -1,21 +1,24 @@
 function handleSubmit(e) {
-    if (!nameIsValid() || !emailIsValid() || !messageIsValid()) {
+    if (!nameIsValid() || !emailIsValid() || !passwordIsValid() || !confirmIsValid() || !messageIsValid()) {
         e.preventDefault();
-    }else{
+    } else {
         submitData();
         e.preventDefault();
     }
 }
 
-function submitData(){
+function submitData() {
     const name = document.getElementById("input-name");
     const email = document.getElementById("input-email");
     const message = document.getElementById("input-message");
+    const password = document.getElementById("input-password");
+    const confirm = document.getElementById("input-confirm");
 
     console.log("Name: ", name.value);
     console.log("E-mail: ", email.value);
+    console.log("Password: ", password.value);
+    console.log("Confirm: ", confirm.value);
     console.log("Message: ", message.value);
-
 }
 
 function nameIsValid() {
@@ -47,6 +50,32 @@ function messageIsValid() {
     if (message.value == "") {
         message.classList.add("input-invalid");
         showWarning("warning-message");
+
+        return false;
+    }
+
+    return true;
+}
+
+function passwordIsValid() {
+    const password = document.getElementById("input-password");
+    if (password.value == "") {
+        password.classList.add("input-invalid");
+        showWarning("warning-password");
+
+        return false;
+    }
+
+    return true;
+}
+
+function confirmIsValid() {
+    const password = document.getElementById("input-password");
+    const confirm = document.getElementById("input-confirm");
+
+    if (confirm.value == "" || password.value != confirm.value) {
+        confirm.classList.add("input-invalid");
+        showWarning("warning-confirm");
 
         return false;
     }

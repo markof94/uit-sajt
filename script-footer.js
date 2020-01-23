@@ -1,5 +1,6 @@
 const pages = [];
-loadPageData();
+let topPages = [];
+
 
 function loadPageData(){
     loadPage("index");
@@ -61,5 +62,55 @@ function getPage(name){
 }
 
 function generateFooterLinks(){
+    getTopThreePages();
 
+
+    const footer = document.getElementById('footer');
+    for(let i = 0; i < topPages.length; i++){
+        
+        const link = document.createElement("a");
+        link.href = topPages[i].pageName + ".html";
+        let pageName = topPages[i].pageName;
+        if(pageName == "index"){
+            pageName = "home";
+        }
+        link.innerHTML = pageName.toUpperCase();
+        link.title = topPages[i].visitCount;
+        footer.appendChild(link);
+    }
 }
+
+function getTopThreePages(){
+    const oldPages = pages.slice(0);
+
+    const lowestPage1 = getLowestPageID(oldPages);
+    oldPages.splice(lowestPage1, 1);
+    const lowestPage2 = getLowestPageID(oldPages);
+    oldPages.splice(lowestPage2, 1);
+
+    topPages = oldPages.slice(0);
+
+    sortTopPagesDescending();
+}
+
+function getLowestPageID(pageArray){
+    let lowestPageID = 0;
+    for(let i = 1; i < pageArray.length; i++){
+        if(pageArray[i].visitCount < pageArray[lowestPageID].visitCount){
+            lowestPageID = i;
+        }
+    }
+    
+    return lowestPageID;
+}
+
+function sortTopPagesDescending(){
+    topPages.sort((a,b) => (a.visitCount < b.visitCount) ? 1 : -1);
+}
+
+
+setTimeout(function(){
+    loadPageData();
+    generateFooterLinks();
+    console.log(topPages)
+}, 100);
