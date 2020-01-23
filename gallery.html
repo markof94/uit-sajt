@@ -5,8 +5,9 @@
     <html lang="en">
     <meta name="description" content="A website for me to do whatever I want with.">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script-footer.js"></script>
 
-    <script src="script.js"></script>
+    <script src="script-gallery.js"></script>
 
     <title>Marko Fajler - Home</title>
 
@@ -15,11 +16,11 @@
 <body>
     <div class="home-wrapper">
         <div class="nav">
-            <a href="index.html"><button class="nav-button">Home</button></a>
-            <a href="biography.html"><button class="nav-button">Biography</button></a>
-            <a href="gallery.html"><button class="nav-button">Gallery</button></a>
-            <a href="games.html"><button class="nav-button">Games</button></a>
-            <a href="contact.html"><button class="nav-button">Contact</button></a>
+            <a href="index.html"><button class="nav-button" onclick="visitIndex()">Home</button></a>
+            <a href="biography.html"><button class="nav-button" onclick="visitBiography()">Biography</button></a>
+            <a href="gallery.html"><button class="nav-button" onclick="visitGallery()">Gallery</button></a>
+            <a href="games.html"><button class="nav-button" onclick="visitGames()">Games</button></a>
+            <a href="contact.html"><button class="nav-button" onclick="visitContact()">Contact</button></a>
         </div>
 
 

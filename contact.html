@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <html lang="en">
+    <meta name="description" content="A website for me to do whatever I want with.">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script-footer.js"></script>
+
+    <script src="script-contact.js"></script>
+
+    <title>Marko Fajler - Home</title>
+
+</head>
+
+<body>
+    <div class="home-wrapper">
+        <div class="nav">
+            <a href="index.html"><button class="nav-button" onclick="visitIndex()">Home</button></a>
+            <a href="biography.html"><button class="nav-button" onclick="visitBiography()">Biography</button></a>
+            <a href="gallery.html"><button class="nav-button" onclick="visitGallery()">Gallery</button></a>
+            <a href="games.html"><button class="nav-button" onclick="visitGames()">Games</button></a>
+            <a href="contact.html"><button class="nav-button" onclick="visitContact()">Contact</button></a>
+        </div>
+
+        <div class="title">
+            Contact
+        </div>
+
+        <form method="post" class="form-wrapper" onsubmit="handleSubmit(event)">
+            <div class="form-item">
+                <label for="input-name" class="form-label">Name</label>
+                <input type="text" class="input" id="input-name" placeholder="Your name" onchange="resetWarning(this, 'warning-name')">
+                <div id="warning-name" class="warning" >Name must not be empty!</div>
+            </div>
+            <div class="form-item">
+                <label for="input-email" class="form-label">E-mail address</label>
+                <input type="email" class="input" id="input-email" placeholder="Your e-mail" onchange="resetWarning(this, 'warning-email')">
+                <div id="warning-email" class="warning" >E-mail must not be empty!</div>
+            </div>
+            <div class="form-item">
+                <label for="input-message" class="form-label">Message</label>
+                <textarea id="input-message" class="input" placeholder="What's on your mind?" onchange="resetWarning(this, 'warning-message')"></textarea>
+                <div id="warning-message" class="warning" >Message must not be empty!</div>
+            </div>
+
+            <button type="submit" class="nav-button form-button">SUBMIT</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

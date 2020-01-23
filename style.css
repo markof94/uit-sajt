@@ -5,6 +5,7 @@
 :root{
     --color-bg: #202527;
     --color-text: #FAA613;
+    --color-warning: rgb(168, 28, 28);
 }
 
 body{
@@ -12,6 +13,7 @@ body{
     color: var(--color-text);
     font-family: 'Quantico', sans-serif;
     background-image: url('assets/background.jpg');
+    background-attachment: fixed;
 }
 
 .home-wrapper{
@@ -100,7 +102,7 @@ body{
 
     padding: 8px 16px;
 
-    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.1s ease-in-out;
 
     font-family: inherit;
     font-size: 20px;
@@ -191,7 +193,7 @@ body{
 
     border-radius: 40px/15px;
 
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .game-box:hover{
@@ -281,6 +283,104 @@ a:visited{
 
 #image-right:hover{
     opacity: 1;
+}
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 90vmin;
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 16px;
+    font-size: 22px;
+    
+}
+
+.form-item>label{
+    user-select: none;
+    width: 25%;
+    margin: auto;
+    
+}
+
+.input{
+    background-color: var(--color-bg);
+    border: 1px solid transparent;
+    border-radius: 10px/30px;
+    outline:none;
+
+    transition: all 0.2s ease-in-out;
+
+    padding: 8px 16px;
+
+    font-family: inherit;
+
+    caret-color: var(--color-text);
+    color: var(--color-text);
+    font-size: 16px;
+
+}
+
+.input:focus, .input:hover{
+    border: 1px solid var(--color-text);
+}
+
+.input::placeholder{
+    color: var(--color-text);
+    opacity: 0.35;
+}
+
+#input-name{
+    width: 25%;
+    min-width: 30vmin;
+    margin: auto;
+}
+
+#input-email{
+    width: 25%;
+    min-width: 30vmin;
+    margin: auto;
+}
+
+#input-message{
+    height: 40vmin;
+    width: 80%;
+}
+
+
+.form-button{
+    width: 80%;
+    border-width: 1px;
+}
+
+.form-button:hover{
+    border-radius: 10px/30px;
+    
+}
+
+.input-invalid{
+    border-color: var(--color-warning);
+}
+
+.warning{
+    color: var(--color-warning);
+    font-size: 12px;
+    display: none;
+    
+}
+
+.visible{
+    display: block;
 }
 
 @keyframes entry{
