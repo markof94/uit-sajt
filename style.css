@@ -22,6 +22,33 @@ body{
     
 }
 
+.animation-top-bottom-border::before, .animation-top-bottom-border::after{
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+}
+
+.animation-top-bottom-border::before{
+    border-top: 4px solid var(--color-text);
+    border-bottom: 4px solid var(--color-text);
+    transform: scale(0, 1);
+}
+
+.animation-top-bottom-border::after{
+    
+    transform: scale(1, 0);
+}
+
+.animation-top-bottom-border:hover::before, .animation-top-bottom-border:hover::after {
+    transform: scale(1, 1);
+    transition: transform 0.2s ease-out;
+}
+
 .home-wrapper{
     display: flex;
     flex-direction: column;
@@ -42,24 +69,29 @@ body{
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-
     width: 40vmin;
-   
-    
     margin: 20px;
-    
     padding-bottom: 0;
-
-    border-radius: 90px/60px;
-
-    border: 2px solid transparent;
+    
+    border-radius: 20px/50px;
 
     overflow: hidden;
-
+    
     user-select: none;
-
-    transition: all 0.3s cubic-bezier(.08,1,.37,1.75);
+    background: none;
+    vertical-align: middle;
+    position: relative;
+    
+    transition: all 0.5s ease-out;
 }
+
+.home-box:hover{
+
+    transform: translateY(5px);
+    border-radius: 12px;
+}
+
+
 
 .home-info{
     width: 100%;
@@ -68,11 +100,6 @@ body{
     background-image: linear-gradient(var(--color-bg2), var(--color-bg));
 }
 
-.home-box:hover{
-    border: 2px solid var(--color-text);
-
-    border-radius: 90px/30px;
-}
 
 .home-name{
     font-size: 45px;
@@ -86,7 +113,6 @@ body{
 
 .home-photo{
     width: 100%;
-
 }
 
 .nav{
@@ -190,25 +216,20 @@ body{
     display: flex;
     flex-direction: column;
     width: 20vmin;
-
     background-color: var(--color-bg);
     margin: 16px;
-   
     padding-bottom: 8px;
-    
     overflow: hidden;
     font-size: 20px;
-
     border: 1px solid var(--color-text);
-
-    border-radius: 40px/15px;
-
-    transition: all 0.2s ease-in-out;
+    border-radius: 100% 0% 100% 0% / 16% 87% 13% 84%;
+    transition: all 0.2s ease-in-out, transform 0.5s ease-out;
 }
 
 .game-box:hover{
     background-color: var(--color-text);
     color: var(--color-bg);
+    transform: translateY(-5px);
 }
 
 .game-preview{
@@ -256,7 +277,7 @@ a:visited{
 .gallery-image{
     border-radius: 8px;
 
-    transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out, transform 0.4s ease-out;
 }
 
 .gallery-entry-animation{
@@ -268,8 +289,8 @@ a:visited{
 #image-center{
     width: 50vmin;
 
-    border-radius: 90px/30px;
-    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+    
+    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
 }
 
 #image-left{
@@ -277,6 +298,7 @@ a:visited{
     opacity: 0.35;
     clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
 }
+
 
 #image-right{
     width: 15vmin;
@@ -286,10 +308,12 @@ a:visited{
 
 #image-left:hover{
     opacity: 1;
+    transform: translateX(-10%);
 }
 
 #image-right:hover{
     opacity: 1;
+    transform: translateX(10%);
 }
 
 .form-wrapper{
@@ -322,8 +346,9 @@ a:visited{
 
 .input{
     background-color: var(--color-bg);
-    border: 1px solid transparent;
-    border-radius: 10px/30px;
+    border: 2px solid transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     outline:none;
 
     transition: all 0.2s ease-in-out;
@@ -339,7 +364,7 @@ a:visited{
 }
 
 .input:focus, .input:hover{
-    border: 1px solid var(--color-text);
+    border-bottom: 2px solid var(--color-text);
 }
 
 .input::placeholder{
@@ -386,6 +411,7 @@ a:visited{
     padding: 10px 8px;
     border-radius: 0 0 5px 5px;
     display: none;
+    border: 1px solid var(--color-warning);
 
     
 }

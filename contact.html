@@ -3,7 +3,11 @@
 
 <head>
     <html lang="en">
-    <meta name="description" content="A website for me to do whatever I want with.">
+    <meta name="description" content="This is my website, you're welcome.">
+    <meta name="keywords"
+        content="Marko, Fajler, portfolio, games, web games, react, mini-games, mini games, fun, conan, barbarian, doom, biography, personal, contact, HTML, CSS, JavaScript">
+    <meta name="author" content="Marko Fajler - Contact">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script-footer.js"></script>
 
@@ -30,35 +34,40 @@
         <form method="post" class="form-wrapper" onsubmit="handleSubmit(event)">
             <div class="form-item">
                 <label for="input-name" class="form-label">Name</label>
-                <input type="text" class="input" id="input-name" placeholder="Your name" onchange="resetWarning(this, 'warning-name')">
-                <div id="warning-name" class="warning" >Name must not be empty!</div>
+                <input type="text" class="input" id="input-name" placeholder="Your name"
+                    onchange="resetWarning(this, 'warning-name')">
+                <div id="warning-name" class="warning">Name must not be empty!</div>
             </div>
             <div class="form-item">
                 <label for="input-email" class="form-label">E-mail address</label>
-                <input type="email" class="input" id="input-email" placeholder="Your e-mail" onchange="resetWarning(this, 'warning-email')">
-                <div id="warning-email" class="warning" >E-mail must not be empty!</div>
+                <input type="email" class="input" id="input-email" placeholder="Your e-mail"
+                    onchange="resetWarning(this, 'warning-email')">
+                <div id="warning-email" class="warning">E-mail must not be empty!</div>
             </div>
             <div class="form-item">
                 <label for="input-password" class="form-label">Password</label>
-                <input type="password" class="input" id="input-password" placeholder="Your password" onchange="resetWarning(this, 'warning-password')">
-                <div id="warning-password" class="warning" >Password must not be empty!</div>
+                <input type="password" class="input" id="input-password" placeholder="Your password"
+                    onchange="resetWarning(this, 'warning-password')">
+                <div id="warning-password" class="warning">Password must not be empty!</div>
             </div>
             <div class="form-item">
                 <label for="input-confirm" class="form-label">Confirm Password</label>
-                <input type="password" class="input" id="input-confirm" placeholder="Confirm password" onchange="resetWarning(this, 'warning-confirm')">
-                <div id="warning-confirm" class="warning" >Passwords must match!</div>
+                <input type="password" class="input" id="input-confirm" placeholder="Confirm password"
+                    onchange="resetWarning(this, 'warning-confirm')">
+                <div id="warning-confirm" class="warning">Passwords must match!</div>
             </div>
             <div class="form-item">
                 <label for="input-message" class="form-label">Message</label>
-                <textarea id="input-message" class="input" placeholder="What's on your mind?" onchange="resetWarning(this, 'warning-message')"></textarea>
-                <div id="warning-message" class="warning" >Message must not be empty!</div>
+                <textarea id="input-message" class="input" placeholder="What's on your mind?"
+                    onchange="resetWarning(this, 'warning-message')"></textarea>
+                <div id="warning-message" class="warning">Message must not be empty!</div>
             </div>
 
             <button type="submit" class="nav-button form-button">SUBMIT</button>
 
         </form>
     </div>
-    
+
     <div class="footer-wrap">
         <div id="footer">
             <!--Sadrzaj se generise iz script-footer.js-->
