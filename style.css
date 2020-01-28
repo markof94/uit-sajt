@@ -5,16 +5,22 @@
 :root{
     --color-bg: #202527;
     --color-bg2: rgb(17, 16, 16);
-    --color-text: #FAA613;
+    --color-text: #87F6FF;
     --color-warning: rgb(214, 39, 39);
+
+    /* --color-bg: #202527;
+    --color-bg2: rgb(17, 16, 16);
+    --color-text: #FAA613;
+    --color-warning: rgb(214, 39, 39); */
 }
 
 body{
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: 'Quantico', sans-serif;
-    background-image: url('assets/background.jpg');
-    background-attachment: fixed;
+    background-image: url('assets/bg3.png');
+   
+    background-repeat: repeat;
 
     min-height: 100vh;
     position: relative;
@@ -125,9 +131,6 @@ body{
     margin: 20px;
 
     user-select: none;
-
-  
-
 }
 
 .nav-button{
@@ -138,7 +141,7 @@ body{
 
     padding: 8px 16px;
 
-    transition: color 0.2s ease-in-out, background-color 0.1s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-radius 0.1s ease-out;
 
     font-family: inherit;
     font-size: 20px;
@@ -154,21 +157,7 @@ body{
     border-radius: 30px/10px;
 }
 
-.quote{
-   
-    font-size: 16px;
-    margin-top: 32px;
-    padding: 10px;
-
-    user-select: none;
-
-
-}
-
 .biography-wrapper{
-
-    
-
     padding: 30px;
 
     background-image: linear-gradient(var(--color-bg2), var(--color-bg));
@@ -197,6 +186,10 @@ body{
     width: 80vmin;
     text-align: center;
     
+}
+
+.biography-body>a:link{
+    text-decoration: underline;
 }
 
 .games-wrapper{
@@ -250,7 +243,7 @@ a:visited{
     color: var(--color-text);
 }
 
-.gallery-wrapper{
+.fun-wrapper{
     display: flex;
     width: 90vmin;
     margin: 0 auto;
@@ -265,55 +258,6 @@ a:visited{
     border-radius: 90px/30px;
 
 
-}
-
-.gallery-item{
-    margin-left: 6px;
-    margin-right: 6px;
-
-    cursor: pointer;
-}
-
-.gallery-image{
-    border-radius: 8px;
-
-    transition: all 0.15s ease-in-out, transform 0.4s ease-out;
-}
-
-.gallery-entry-animation{
-    animation-name: gallery-entry;
-    animation-timing-function: ease-in-out;
-    animation-duration: 0.2s;
-}
-
-#image-center{
-    width: 50vmin;
-
-    
-    clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
-}
-
-#image-left{
-    width: 15vmin;
-    opacity: 0.35;
-    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-}
-
-
-#image-right{
-    width: 15vmin;
-    opacity: 0.35;
-    clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-}
-
-#image-left:hover{
-    opacity: 1;
-    transform: translateX(-10%);
-}
-
-#image-right:hover{
-    opacity: 1;
-    transform: translateX(10%);
 }
 
 .form-wrapper{
@@ -420,35 +364,25 @@ a:visited{
     display: block;
 }
 
-.footer-wrap{
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    padding-top: 8px;
-}
+.footer{
 
-#footer{
-    position: relative;
     display: flex;
     justify-content: center;
     
-    left: -50%;
-    
     padding-top: 8px;
     border-top: 1px solid var(--color-text);
+    margin-top: 12px;
 }
 
-#footer>a{
-    margin-left: 16px;
-    margin-right: 16px;
-    font-size: 16px;
-
-
-    transition: all 0.15s ease-out;
+.footer>a{
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 24px;
+    transition: all 0.5s ease-out;
 }
 
-#footer>a:hover{
-    letter-spacing: 2px;
+.footer>a:hover{
+    transform: translateY(-5px);
 }
 
 @keyframes entry{
@@ -460,7 +394,7 @@ a:visited{
     }
 }
 
-@keyframes gallery-entry{
+@keyframes fun-entry{
     from{
        
         opacity: 0;

@@ -92,4 +92,3 @@ function resetWarning(inputElement, warningElement) {
     inputElement.classList.remove("input-invalid");
     document.getElementById(warningElement).classList.remove("visible");
 }
-
